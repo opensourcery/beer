@@ -1,10 +1,12 @@
 [
   {
     "name": "Oatmeal Stout",
-    "brewer": "Anderson Valley"
+    "brewer": "Anderson Valley",
+    "percentRemaining": 0.42
   },
   {
     "name": "Workhorse IPA",
-    "brewer": "Laurelwood"
+    "brewer": "Laurelwood",
+    "percentRemaining": 0.97
   }
 ]
