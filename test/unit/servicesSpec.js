@@ -3,12 +3,12 @@
 /* jasmine specs for services go here */
 
 describe('service', function() {
-  beforeEach(module('myApp.services'));
+  beforeEach(module('osBeer.services'));
 
 
-  describe('version', function() {
-    it('should return current version', inject(function(version) {
-      expect(version).toEqual('0.1');
+  describe('Kegs', function() {
+    it('should return 2 kegs', inject(function(Kegs) {
+      expect(Kegs.query().length).toEqual(2);
     }));
   });
 });
