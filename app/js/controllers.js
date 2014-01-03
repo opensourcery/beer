@@ -2,10 +2,9 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('MyCtrl1', [function() {
-
-  }])
-  .controller('MyCtrl2', [function() {
-
-  }]);
+angular.module('osBeer.controllers', []).
+  controller('Kegs', ['$scope', 'Kegs',
+    function($scope, Kegs) {
+      $scope.kegs = Kegs.query();
+    }
+  ]);

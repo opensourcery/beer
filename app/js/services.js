@@ -5,5 +5,11 @@
 
 // Demonstrate how to register services
 // In this case it is a simple value service.
-angular.module('myApp.services', []).
-  value('version', '0.1');
+angular.module('osBeer.services', ['ngResource']).
+  factory('Kegs', ['$resource',
+    function($resource){
+      return $resource('kegs/:kegId.json', {}, {
+        query: {method: 'GET', params:{kegId:'kegs'}, isArray:true}
+      });
+    }
+  ]);
