@@ -10,11 +10,7 @@
   <div ng-controller="Kegs">
     <ul ng-repeat="beer in kegs">
       <li class="beer">
-        <h2>{{beer.name}}</h2>
-        <h3>{{beer.brewer}}</h3>
-        <div class="remaining">
-          <h4 style="width:{{beer.percentRemaining * 100}}%">{{beer.percentRemaining * 100}}%</h4>
-        </div>
+        <ng-include src="'partials/beer.html'" />
       </li>
     </ul>
   </div>
