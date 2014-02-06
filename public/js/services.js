@@ -8,7 +8,7 @@
 angular.module('osBeer.services', ['ngResource']).
   factory('Kegerator', ['$resource',
     function($resource){
-      return $resource('kegerator.json', {}, {
+      return $resource('api/kegerator', {}, {
         query: {method: 'GET'}
       });
     }
