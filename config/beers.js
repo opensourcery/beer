@@ -1,7 +1,7 @@
 /**
  * Untappd beer IDs.
  */
-exports.beers = [
+exports.ids = [
   // 60 Minute IPA
   3952,
   // Pfriem Blonde IPA
