@@ -11,6 +11,7 @@
     "socket.io": "~0.9.16",
     "express": "~3.2.6",
     "ejs": "*",
-    "node-untappd": "*"
+    "node-untappd": "*",
+    "redis": "~0.10"
   }
 }

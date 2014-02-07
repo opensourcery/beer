@@ -17,15 +17,26 @@ var UntappdClient = require('node-untappd/UntappdClient');
  * Configuration
  */
 var untappdConfig = require ('./config/secret');
-beerIds = require ('./config/beers');
+var beerIds = require ('./config/beers');
 
 /**
  * Init Untappd.
  */
-untappd = new UntappdClient(untappdConfig.debug);
+var untappd = new UntappdClient(untappdConfig.debug);
 
 untappd.setClientId(untappdConfig.clientId);
 untappd.setClientSecret(untappdConfig.clientSecret);
+
+/**
+ * Redis cache.
+ */
+var redis = require('redis');
+var cache = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST);
+
+/**
+ * Init the beers.
+ */
+var beers = require('./lib/beers')(cache, untappd, beerIds);
 
 // all environments
 app.set('port', process.env.PORT || 3000);
