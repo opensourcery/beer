@@ -7,15 +7,14 @@
 </head>
 <body>
   <h1>OpenSourcery::Beer</h1>
-  <div ng-controller="Kegs">
-    <ul ng-repeat="beer in kegs">
+  <div ng-controller="Kegerator">
+    <ul ng-repeat="beer in beers">
       <li class="beer">
         <ng-include src="'partials/beer.html'" />
       </li>
     </ul>
-  </div>
-  <div ng-controller="Kegerator">
-    <h4>Current temperature: {{environment.temperature}}&deg;F</h4>
+    <h4>Current temperature: {{temperature}}&deg;F</h4>
+    <h6>Current time: {{time}}</h6>
   </div>
 
   <!-- In production use:

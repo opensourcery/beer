@@ -3,4 +3,4 @@ logs/*
 node_modules/
 tmp
 .DS_Store
-secret.js
+config/secret.js

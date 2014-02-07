@@ -3,13 +3,15 @@
 /* Controllers */
 
 angular.module('osBeer.controllers', []).
-  controller('Kegs', ['$scope', 'Kegs',
-    function($scope, Kegs) {
-      $scope.kegs = Kegs.query();
-    }
-  ]).
-  controller('Kegerator', ['$scope', 'Kegerator',
-    function($scope, Kegerator) {
-      $scope.environment = Kegerator.query();
+  controller('Kegerator', ['$scope', 'socket',
+    function($scope, socket) {
+      socket.on('send:beers', function (data) {
+        $scope.kegerator = data.kegerator;
+        $scope.beers = data.beers;
+console.log(data);
+      });
+      socket.on('send:time', function (data) {
+        $scope.time = data.time;
+      });
     }
   ]);

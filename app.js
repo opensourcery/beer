@@ -4,7 +4,6 @@
 
 var express = require('express'),
   routes = require('./routes'),
-  api = require('./routes/api'),
   http = require('http'),
   path = require('path');
 
@@ -17,12 +16,13 @@ var UntappdClient = require('node-untappd/UntappdClient');
 /**
  * Configuration
  */
-var untappdConfig = require ('./secret');
+var untappdConfig = require ('./config/secret');
+beerIds = require ('./config/beers');
 
 /**
  * Init Untappd.
  */
-var untappd = new UntappdClient(untappdConfig.debug);
+untappd = new UntappdClient(untappdConfig.debug);
 
 untappd.setClientId(untappdConfig.clientId);
 untappd.setClientSecret(untappdConfig.clientSecret);
@@ -56,9 +56,6 @@ if (app.get('env') === 'production') {
 // serve index and view partials
 app.get('/', routes.index);
 //app.get('/partials/:name', routes.partials);
-
-// JSON API
-app.get('/api/kegerator', api.kegerator);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);

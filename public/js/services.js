@@ -6,10 +6,34 @@
 // Demonstrate how to register services
 // In this case it is a simple value service.
 angular.module('osBeer.services', ['ngResource']).
-  factory('Kegerator', ['$resource',
+  factory('Beers', ['$resource',
     function($resource){
-      return $resource('api/kegerator', {}, {
+      return $resource('api/beers', {}, {
         query: {method: 'GET'}
       });
     }
-  ]);
+  ]).
+  factory('socket', function ($rootScope) {
+    var socket = io.connect();
+    return {
+      on: function (eventName, callback) {
+        socket.on(eventName, function () {  
+          var args = arguments;
+          $rootScope.$apply(function () {
+            callback.apply(socket, args);
+          });
+        });
+      },
+      emit: function (eventName, data, callback) {
+        socket.emit(eventName, data, function () {
+          var args = arguments;
+          $rootScope.$apply(function () {
+            if (callback) {
+              callback.apply(socket, args);
+            }
+          });
+        })
+      }
+    };
+  });
+  
