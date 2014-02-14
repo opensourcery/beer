@@ -36,14 +36,16 @@ var beerCache = (function() {
       if (err || !result) {
         // Call untappd.
         untappd.beerInfo(function(err,data) {
-          socket.emit('send:beer:' + tapNumber, {
+          socket.emit('send:beers', {
             beer: data.response.beer
           })
-          cache.setex(cacheKey, 3600, data.response.beer);
+          cache.setex(cacheKey, 3600, JSON.stringify(data.response.beer));
         }, beerId);
       }
       else {
-        beers.details = result;
+        socket.emit('send:beers', {
+          beer: JSON.parse(result)
+        });
       }
     });
   }
@@ -60,9 +62,6 @@ var beerCache = (function() {
 module.exports = function (socket) {
   // Send each beer.
   for (var tapNumber in beerIds.ids) {
-    socket.emit('tap:' + tapNumber, {
-      tapNumber: tapNumber                  
-    });
     var beer = beerCache.get(cache, untappd, beerIds.ids[tapNumber], tapNumber, socket);
   }
 

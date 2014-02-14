@@ -5,10 +5,9 @@
 angular.module('osBeer.controllers', []).
   controller('Kegerator', ['$scope', 'socket',
     function($scope, socket) {
+      $scope.beers = [];
       socket.on('send:beers', function (data) {
-        $scope.kegerator = data.kegerator;
-        $scope.beers = data.beers;
-console.log(data);
+        $scope.beers.push(data.beer);
       });
       socket.on('send:time', function (data) {
         $scope.time = data.time;
