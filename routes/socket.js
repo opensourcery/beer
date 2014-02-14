@@ -37,14 +37,16 @@ var beerCache = (function() {
         // Call untappd.
         untappd.beerInfo(function(err,data) {
           socket.emit('send:beers', {
-            beer: data.response.beer
+            beer: data.response.beer,
+            tapNumber: tapNumber
           })
           cache.setex(cacheKey, 3600, JSON.stringify(data.response.beer));
         }, beerId);
       }
       else {
         socket.emit('send:beers', {
-          beer: JSON.parse(result)
+          beer: JSON.parse(result),
+          tapNumber: tapNumber
         });
       }
     });
@@ -64,6 +66,12 @@ module.exports = function (socket) {
   for (var tapNumber in beerIds.ids) {
     var beer = beerCache.get(cache, untappd, beerIds.ids[tapNumber], tapNumber, socket);
   }
+
+  // @todo trigger this from a POST request sent by kegbot.
+  socket.emit('send:environment', {
+    temperature: 34,
+    kegs: [0.42, 0.77]
+  });
 
   setInterval(function () {
     socket.emit('send:time', {
