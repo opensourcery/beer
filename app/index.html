@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" ng-app="osBeer">
+<head>
+  <meta charset="utf-8">
+  <title>OpenSourcery::Beer</title>
+  <link rel="stylesheet" href="css/app.css"/>
+</head>
+<body>
+  <h1>OpenSourcery::Beer</h1>
+  <div ng-controller="Kegs">
+    <ul ng-repeat="beer in kegs">
+      <li class="beer">
+        <ng-include src="'partials/beer.html'" />
+      </li>
+    </ul>
+  </div>
+  <div ng-controller="Kegerator">
+    <h4>Current temperature: {{environment.temperature}}&deg;F</h4>
+  </div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-resource.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <script src="js/controllers.js"></script>
+</body>
+</html>
