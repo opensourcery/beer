@@ -1,12 +1,10 @@
-<img src="{{beer.untappd.beer_label}}" alt="{{beer.untappd.beer_name}}" />
+<!--<img src="{{beer.untappd.beer_label}}" alt="{{beer.untappd.beer_name}}" />-->
 <h2>{{beer.untappd.beer_name}}</h2>
-<h3>{{beer.untappd.brewery.brewery_name}}</h3>
-<dl>
-  <dt>ABV</dt>
-  <dd>{{beer.untappd.beer_abv}}</dd>
-  <dt>Style</dt>
-  <dd>{{beer.untappd.beer_style}}</dd>
-</dl>
+<h3></h3>
+<ul>
+	<li>{{beer.untappd.brewery.brewery_name}}</li>
+	<li>{{beer.untappd.beer_style}}</li>
+	<li>{{beer.untappd.beer_abv}}%</li>
 <div class="remaining">
   <h4 style="width:{{beer.percentRemaining * 100}}%">{{beer.percentRemaining * 100}}%</h4>
 </div>

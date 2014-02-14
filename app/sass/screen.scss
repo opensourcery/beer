@@ -1,0 +1,79 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+ // *** Imports *** //
+@import "compass/reset";
+
+// *** Variables *** //
+
+// *** Mixins *** //
+
+@mixin make_font_face(
+    $font-family: "SourceSansPro",
+    $font-variant: "Regular",
+    $font-weight: "normal",
+    $font-style: "normal") {
+    @font-face {
+        font-family: '#{$font-family}';
+        src: url('/fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.eot');
+        src: url('/fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.eot?#iefix') format('embedded-opentype'),
+             url('/fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.woff') format('woff'),
+             url('/fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.ttf') format('truetype'),
+             url('/fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.svg##{$font-family}') format('svg');
+        font-weight: #{$font-weight};
+        font-style: #{$font-style};
+    }
+}
+
+@include make_font_face("SourceSansPro", "Light");
+@include make_font_face("chunkfive", "Regular", "bold");
+
+$font-family1: 'SourceSansPro', sans-serif;
+$font-family2: 'ChunkFive', serif;
+
+body {
+	font: {
+		family: $font-family1;
+		size: 24px;
+	}
+	line-height: 1.2;
+}
+
+// *** Functions *** //
+
+// *** Base *** //
+h1 {
+	font: {
+		family: $font-family1;
+		size: 72px;
+	}
+}
+
+h2 {
+	font: {
+		family: $font-family2;
+		size: 36px;
+	}
+}
+
+// *** Layout *** //
+
+// *** Modules *** //
+
+// *** State *** //
+.chunky {
+	font-family: $font-family2;
+}
+.remaining {
+  background-color: blue;
+}
+.remaining h4 {
+  background-color: orange;
+}
+
+// *** Theme *** //
+
+// *** UNSORTED *** //
+
