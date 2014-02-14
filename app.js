@@ -11,33 +11,6 @@ var app = module.exports = express();
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 
-var UntappdClient = require('node-untappd/UntappdClient');
-
-/**
- * Configuration
- */
-var untappdConfig = require ('./config/secret');
-var beerIds = require ('./config/beers');
-
-/**
- * Init Untappd.
- */
-var untappd = new UntappdClient(untappdConfig.debug);
-
-untappd.setClientId(untappdConfig.clientId);
-untappd.setClientSecret(untappdConfig.clientSecret);
-
-/**
- * Redis cache.
- */
-var redis = require('redis');
-var cache = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST);
-
-/**
- * Init the beers.
- */
-var beers = require('./lib/beers')(cache, untappd, beerIds);
-
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
