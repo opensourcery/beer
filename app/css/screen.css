@@ -87,32 +87,67 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 body {
   font-family: "SourceSansPro", sans-serif;
   font-size: 24px;
+  text-align: center;
   line-height: 1.2;
 }
 
-/* line 47, ../sass/screen.scss */
+/* line 48, ../sass/screen.scss */
 h1 {
   font-family: "SourceSansPro", sans-serif;
   font-size: 72px;
 }
 
 /* line 54, ../sass/screen.scss */
-h2 {
+h2, h3 {
   font-family: "ChunkFive", serif;
   font-size: 36px;
 }
 
-/* line 66, ../sass/screen.scss */
+/* line 62, ../sass/screen.scss */
+.remaining {
+  height: 318px;
+  width: 180px;
+  background-image: url("/img/pint.svg");
+  background-size: cover;
+}
+
+/* line 70, ../sass/screen.scss */
+.keg {
+  width: 50%;
+  float: left;
+  overflow: hidden;
+}
+/* line 75, ../sass/screen.scss */
+.keg:first-child ul {
+  text-align: right;
+  float: right;
+}
+/* line 79, ../sass/screen.scss */
+.keg:first-child .remaining {
+  float: right;
+}
+/* line 84, ../sass/screen.scss */
+.keg:last-child ul {
+  text-align: left;
+  float: left;
+}
+/* line 88, ../sass/screen.scss */
+.keg:last-child .remaining {
+  height: 318px;
+  width: 180px;
+  background-image: url("/img/pint.svg");
+  background-size: cover;
+  float: left;
+}
+
+/* line 99, ../sass/screen.scss */
+.filled {
+  background-color: rgba(165, 42, 42, 0.9);
+  width: 100%;
+  vertical-align: bottom;
+}
+
+/* line 104, ../sass/screen.scss */
 .chunky {
   font-family: "ChunkFive", serif;
-}
-
-/* line 69, ../sass/screen.scss */
-.remaining {
-  background-color: blue;
-}
-
-/* line 72, ../sass/screen.scss */
-.remaining h4 {
-  background-color: orange;
 }

@@ -6,8 +6,6 @@
  // *** Imports *** //
 @import "compass/reset";
 
-// *** Variables *** //
-
 // *** Mixins *** //
 
 @mixin make_font_face(
@@ -30,6 +28,8 @@
 @include make_font_face("SourceSansPro", "Light");
 @include make_font_face("chunkfive", "Regular", "bold");
 
+// *** Variables *** //
+
 $font-family1: 'SourceSansPro', sans-serif;
 $font-family2: 'ChunkFive', serif;
 
@@ -38,6 +38,7 @@ body {
 		family: $font-family1;
 		size: 24px;
 	}
+	text-align: center;
 	line-height: 1.2;
 }
 
@@ -50,30 +51,57 @@ h1 {
 		size: 72px;
 	}
 }
-
-h2 {
+h2, h3 {
 	font: {
 		family: $font-family2;
 		size: 36px;
 	}
 }
 
-// *** Layout *** //
-
-// *** Modules *** //
-
-// *** State *** //
+// *** Things *** //
+.remaining {
+	height: 318px;
+	width: 180px;
+	background: {
+		image: url('/img/pint.svg');
+		size: cover;
+	}
+}
+.keg {
+	width: 50%;
+	float: left;
+	overflow: hidden;
+	&:first-child {
+		ul {
+			text-align: right;
+			float: right;
+		}
+		.remaining {
+			float: right;
+		}
+	}
+	&:last-child {
+		ul {
+			text-align: left;
+			float: left;
+		}
+		.remaining {
+			height: 318px;
+			width: 180px;
+			background: {
+				image: url('/img/pint.svg');
+				size: cover;
+			}
+			float: left;
+		}
+	}
+}
+.filled {
+	background-color: transparentize(brown, 0.1);
+	width: 100%;
+	vertical-align: bottom;
+}
 .chunky {
 	font-family: $font-family2;
 }
-.remaining {
-  background-color: blue;
-}
-.remaining h4 {
-  background-color: orange;
-}
-
-// *** Theme *** //
-
-// *** UNSORTED *** //
 
