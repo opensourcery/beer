@@ -2,30 +2,28 @@
 <html lang="en" ng-app="osBeer">
 <head>
   <meta charset="utf-8">
-  <title>OpenSourcery::Beer</title>
-  <link rel="stylesheet" href="css/app.css"/>
+  <title>Beer.OpenSourcery</title>
+  <link rel="stylesheet" href="css/screen.css"/>
 </head>
 <body>
-  <h1>OpenSourcery::Beer</h1>
+  <h1><span class="chunky">Beer.</span>OpenSourcery</h1>
   <div ng-controller="Kegerator">
-    <ul>
-      <li class="beer" ng-repeat="beer in beers track by $index">
-        <img src="{{beer.beer_label}}" alt="{{beer.beer_name}}" />
-        <h2>{{beer.beer_name}}</h2>
-        <h3>{{beer.brewery.brewery_name}}</h3>
-        <dl>
-          <dt>ABV</dt>
-          <dd>{{beer.beer_abv}}</dd>
-          <dt>Style</dt>
-          <dd>{{beer.beer_style}}</dd>
-        </dl>
-        <div class="remaining">
-          <h4 style="width:{{beer.percentRemaining * 100}}%">{{beer.percentRemaining * 100}}%</h4>
-        </div>
-      </li>
-    </ul>
-    <h4>Current temperature: {{temperature}}&deg;F</h4>
+    <h4>Current temperature: {{environment.temperature}}&deg;F</h4>
     <h6>Current time: {{time}}</h6>
+  </div>
+  <div ng-controller="Kegs" class="kegs">
+    <div ng-repeat="beer in beers track by $index" class="keg">
+      <!--<img src="{{beer.untappd.beer_label}}" alt="{{beer.untappd.beer_name}}" />-->
+      <div class="container">
+        <div class="filled" style="height:{{beer.percentRemaining * 100}}%"><div class="amt">{{beer.percentRemaining * 100}}%</div></div>
+      </div>
+      <ul>
+        <li><h3>{{beer.beer_name}}</h3></li>
+        <li>{{beer.brewery.brewery_name}}</li>
+        <li>{{beer.beer_style}}</li>
+        <li>{{beer.beer_abv}}% ABV</li>
+      </ul>
+    </div>
   </div>
 
   <!-- In production use:
