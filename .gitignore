@@ -9,3 +9,5 @@ tmp
 *.scssc
 
 app/.sass-cache/28f5e462fb556b68b8050afa626e4ea554b0cc99/screen.scssc
+
+*.scssc
