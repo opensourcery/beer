@@ -104,50 +104,60 @@ h2, h3 {
 }
 
 /* line 62, ../sass/screen.scss */
-.remaining {
+.container {
+  margin: 0 4px;
+  position: relative;
   height: 318px;
   width: 180px;
   background-image: url("/img/pint.svg");
   background-size: cover;
 }
 
-/* line 70, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 .keg {
   width: 50%;
   float: left;
   overflow: hidden;
 }
-/* line 75, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 .keg:first-child ul {
   text-align: right;
   float: right;
 }
-/* line 79, ../sass/screen.scss */
-.keg:first-child .remaining {
+/* line 81, ../sass/screen.scss */
+.keg:first-child .container {
   float: right;
 }
-/* line 84, ../sass/screen.scss */
+/* line 86, ../sass/screen.scss */
 .keg:last-child ul {
   text-align: left;
   float: left;
 }
-/* line 88, ../sass/screen.scss */
-.keg:last-child .remaining {
-  height: 318px;
-  width: 180px;
-  background-image: url("/img/pint.svg");
-  background-size: cover;
+/* line 90, ../sass/screen.scss */
+.keg:last-child .container {
   float: left;
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
 .filled {
-  background-color: rgba(165, 42, 42, 0.9);
-  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url("/img/beer.svg");
+  background-repeat: no-repeat;
+  background-size: 180px;
+  background-position: 50% bottom;
+  height: 318px;
+  width: 180px;
   vertical-align: bottom;
 }
 
-/* line 104, ../sass/screen.scss */
+/* line 109, ../sass/screen.scss */
+.amt {
+  margin-top: 0.5em;
+}
+
+/* line 112, ../sass/screen.scss */
 .chunky {
   font-family: "ChunkFive", serif;
 }

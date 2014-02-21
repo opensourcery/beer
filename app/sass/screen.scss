@@ -59,13 +59,15 @@ h2, h3 {
 }
 
 // *** Things *** //
-.remaining {
-	height: 318px;
-	width: 180px;
-	background: {
-		image: url('/img/pint.svg');
-		size: cover;
-	}
+.container {
+  margin: 0 4px;
+  position: relative;
+  height: 318px;
+  width: 180px;
+  background: {
+    image: url('/img/pint.svg');
+    size: cover;
+  }
 }
 .keg {
 	width: 50%;
@@ -76,7 +78,7 @@ h2, h3 {
 			text-align: right;
 			float: right;
 		}
-		.remaining {
+		.container {
 			float: right;
 		}
 	}
@@ -85,21 +87,27 @@ h2, h3 {
 			text-align: left;
 			float: left;
 		}
-		.remaining {
-			height: 318px;
-			width: 180px;
-			background: {
-				image: url('/img/pint.svg');
-				size: cover;
-			}
+		.container {
 			float: left;
 		}
 	}
 }
 .filled {
-	background-color: transparentize(brown, 0.1);
-	width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: {
+    image: url('/img/beer.svg');
+    repeat: no-repeat;
+    size: 180px;
+    position: 50% bottom;
+  }
+  height: 318px;
+  width: 180px;
 	vertical-align: bottom;
+}
+.amt {
+  margin-top: 0.5em;
 }
 .chunky {
 	font-family: $font-family2;
