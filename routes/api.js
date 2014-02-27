@@ -3,6 +3,12 @@
  */
 
 exports.environment = function (req, res) {
+  var kegerator = {
+    temperature: req.body.temperature,
+    kegs: JSON.parse(req.body.kegs)
+  }
+  // @todo Figure out how to do this without globals.
+  io.sockets.emit('send:environment', kegerator);
   res.json({response: 'OK'});
 }
 
