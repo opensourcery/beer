@@ -67,10 +67,19 @@ module.exports = function (socket) {
     var beer = beerCache.get(cache, untappd, beerIds.ids[tapNumber], tapNumber, socket);
   }
 
-  // @todo trigger this from a POST request sent by kegbot.
-  socket.emit('send:environment', {
-    temperature: 34,
-    kegs: [0.42, 0.77]
+  // Emit last cached kegerator data. Will update when kegbot posts new data.
+  cache.get('kegerator.environment', function (err, result) {
+    if (err || !result) {
+      // Hardcode static values in event of no cached data.
+      var kegerator = {
+        temperature: 34,
+        kegs: [0.99, 0.77]
+      };
+    }
+    else {
+      var kegerator = JSON.parse(result);
+    }
+    socket.emit('send:environment', kegerator);
   });
 
   setInterval(function () {
