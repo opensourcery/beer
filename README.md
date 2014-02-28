@@ -31,4 +31,4 @@ Code to run [beer.opensourcery.com](http://beer.opensourcery.com)
     kegs: [ percentKeg1, percentKeg2 ]
     ```
 
-  For example, `kegs: [0.77, 0.42` would indicate keg 1 is at 77% and keg 2 is ate 42%.
+  For example, `kegs: [0.77, 0.42]` would indicate keg 1 is at 77% and keg 2 is at 42%.
