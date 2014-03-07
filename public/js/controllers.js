@@ -15,10 +15,11 @@ angular.module('osBeer.controllers', []).
       socket.on('send:environment', function (data) {
         $scope.temperature = data.temperature;
         for (var tapNumber in data.kegs) {
-          var percent = data.kegs[tapNumber];
+          // Convert to actual percentage.
+          var percent = data.kegs[tapNumber] * 100;
 
           // Init beers if undefined.
-          $scope.beers[tapNumber] = mergeBeer($scope.beers[tapNumber], { percentRemaining: percent });
+          $scope.beers[tapNumber] = mergeBeer($scope.beers[tapNumber], { percentRemaining: percent.toPrecision(3) });
         }
      });
 

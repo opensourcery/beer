@@ -14,7 +14,7 @@
       <div ng-repeat="beer in beers track by $index" class="keg">
         <!--<img src="{{beer.untappd.beer_label}}" alt="{{beer.untappd.beer_name}}" />-->
         <div class="container">
-          <div class="filled" style="height:{{beer.percentRemaining * 100}}%"><div class="amt">{{beer.percentRemaining * 100}}%</div></div>
+          <div class="filled" style="height:{{beer.percentRemaining}}%"><div class="amt">{{beer.percentRemaining}}%</div></div>
         </div>
         <ul>
           <li><h3>{{beer.beer_name}}</h3></li>
