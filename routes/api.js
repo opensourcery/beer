@@ -13,7 +13,8 @@ exports.environment = function (req, res) {
     temperature: req.body.temperature,
     kegs: JSON.parse(req.body.kegs)
   }
-  // @todo Figure out how to do this without globals.
+
+  // Update the kegerator environment.
   req.app.locals.io.sockets.emit('send:environment', kegerator);
   res.json({response: 'OK'});
 
