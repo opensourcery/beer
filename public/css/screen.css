@@ -43,3 +43,9 @@ h2, h3 { font-family: "ChunkFive", serif; font-size: 36px; }
 .amt { margin-top: 0.5em; }
 
 .chunky { font-family: "ChunkFive", serif; }
+
+#footer { display: block; width: 100%; clear: both; margin: 1em 0; padding-top: 2em; font-size: 18px; text-align: center; color: #505050; }
+
+a:link, a:visited { color: #e1a223; background-color: #f9eed7; text-decoration: none; }
+
+a:hover { color: white; background-color: #e1a223; }

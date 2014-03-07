@@ -73,6 +73,7 @@
 
 $font-family1: 'SourceSansPro', sans-serif;
 $font-family2: 'ChunkFive', serif;
+$beerbrown: hsl(40,76,51);
 
 body {
 	font: {
@@ -166,3 +167,23 @@ h2, h3 {
 	font-family: $font-family2;
 }
 
+#footer {
+  display: block;
+  width: 100%;
+  clear: both;
+  margin: 1em 0;
+  padding-top: 2em;
+  font-size: 18px;
+  text-align: center;
+  color: rgb(80,80,80);
+}
+// links
+a:link, a:visited {
+  color: $beerbrown;
+  background-color: lighten($beerbrown, 40%);
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+  background-color: $beerbrown;
+}
