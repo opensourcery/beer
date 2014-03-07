@@ -10,7 +10,7 @@ var express = require('express'),
 
 var app = module.exports = express();
 var server = require('http').createServer(app);
-io = require('socket.io').listen(server);
+var io = require('socket.io').listen(server);
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -21,6 +21,9 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Allow access to io from within routes.
+app.locals.io = io;
 
 // development only
 if (app.get('env') === 'development') {
