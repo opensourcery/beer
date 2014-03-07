@@ -2,9 +2,9 @@
  * Untappd beer IDs.
  */
 exports.ids = [
-  // 60 Minute IPA
-  3952,
-  // Pfriem Blonde IPA
-  202185
+  // Anderson Valley Oatmeal Stout
+  8821,
+  // Kiwanda Cream Ale
+  7941
 ];
 
