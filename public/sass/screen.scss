@@ -7,6 +7,47 @@
 @import "compass/reset";
 
 // *** Mixins *** //
+@mixin respond_to($size, $minmax: "min") { 
+//
+// $size accepts the following:
+// wide   : should render @media (min-width: 1600px) // wide monitors
+// large  : should render @media (min-width: 760px)  // iPad and larger
+// medium : should render @media (max-width: 1000px  // iPad portrait and smaller
+// small  : should render @media (max-width: 769px   // iPad landscape and smaller
+// mobile : should render  @media (max-width: 521px  // large Android phones and smaller
+//
+// This is a Sass 3.2+-only mixin, it accepts rules as arguments (@content) See http://thesassway.com/intermediate/responsive-web-design-in-sass-using-media-queries-in-sass-32
+	@if $size == wide {
+		@media screen and (min-width: 1600px) {
+			@content;
+		}
+	} 
+	@else if $size == large { 
+		@media screen and (min-width: 760px) {
+			@content;
+		}
+	}
+	@else if $size == medium { 
+		@media screen and (max-width: 1000px) {
+			@content;
+		}
+	}
+	@else if $size == small { 
+		@media screen and (max-width: 769px) {
+			@content;
+		}
+	}
+	@else if $size == mobile { 
+		@media screen and (max-width: 520px) {
+			@content;
+		}
+	}
+	@else { // custom loop for absolute and arbitrary minimum px values 
+		@media screen and (#{$minmax}-width: $size) {
+			@content;
+		}
+	}
+}
 
 @mixin make_font_face(
     $font-family: "SourceSansPro",
@@ -40,6 +81,9 @@ body {
 	}
 	text-align: center;
 	line-height: 1.2;
+  @include respond_to(small) {
+    font-size: 18px;
+  }
 }
 
 // *** Functions *** //
@@ -50,12 +94,18 @@ h1 {
 		family: $font-family1;
 		size: 72px;
 	}
+  @include respond_to(small) {
+    font-size: 38px;
+  }
 }
 h2, h3 {
 	font: {
 		family: $font-family2;
 		size: 36px;
 	}
+  @include respond_to(small) {
+    font-size: 24px;
+  }
 }
 
 // *** Things *** //
@@ -76,7 +126,6 @@ h2, h3 {
 	&:first-child {
 		ul {
 			text-align: right;
-			float: right;
 		}
 		.container {
 			float: right;
@@ -85,12 +134,16 @@ h2, h3 {
 	&:last-child {
 		ul {
 			text-align: left;
-			float: left;
 		}
 		.container {
 			float: left;
 		}
 	}
+  @include respond_to(small) {
+    width: 100%;
+    float: none;
+    margin-bottom: 1em;
+  }
 }
 .filled {
   position: absolute;

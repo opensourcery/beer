@@ -21,18 +21,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 @font-face { font-family: "chunkfive"; src: url("../fonts/chunkfive/chunkfive-Regular-webfont.eot"); src: url("../fonts/chunkfive/chunkfive-Regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/chunkfive/chunkfive-Regular-webfont.woff") format("woff"), url("../fonts/chunkfive/chunkfive-Regular-webfont.ttf") format("truetype"), url("../fonts/chunkfive/chunkfive-Regular-webfont.svg#chunkfive") format("svg"); font-weight: bold; font-style: normal; }
 
 body { font-family: "SourceSansPro", sans-serif; font-size: 24px; text-align: center; line-height: 1.2; }
+@media screen and (max-width: 769px) { body { font-size: 18px; } }
 
 h1 { font-family: "SourceSansPro", sans-serif; font-size: 72px; }
+@media screen and (max-width: 769px) { h1 { font-size: 38px; } }
 
 h2, h3 { font-family: "ChunkFive", serif; font-size: 36px; }
+@media screen and (max-width: 769px) { h2, h3 { font-size: 24px; } }
 
 .container { margin: 0 4px; position: relative; height: 318px; width: 180px; background-image: url("/img/pint.svg"); background-size: cover; }
 
 .keg { width: 50%; float: left; overflow: hidden; }
-.keg:first-child ul { text-align: right; float: right; }
+.keg:first-child ul { text-align: right; }
 .keg:first-child .container { float: right; }
-.keg:last-child ul { text-align: left; float: left; }
+.keg:last-child ul { text-align: left; }
 .keg:last-child .container { float: left; }
+@media screen and (max-width: 769px) { .keg { width: 100%; float: none; margin-bottom: 1em; } }
 
 .filled { position: absolute; bottom: 0; left: 0; background-image: url("/img/beer.svg"); background-repeat: no-repeat; background-size: 180px; background-position: 50% bottom; height: 318px; width: 180px; vertical-align: bottom; }
 
