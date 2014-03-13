@@ -2,8 +2,8 @@
  * Untappd beer IDs.
  */
 exports.ids = [
-  // Anderson Valley Oatmeal Stout
-  8821,
+  // Breakside IPA
+  15479,
   // Kiwanda Cream Ale
   7941
 ];
