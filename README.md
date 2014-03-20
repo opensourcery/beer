@@ -9,6 +9,10 @@ Code to run [beer.opensourcery.com](http://beer.opensourcery.com)
  * `sudo apt-get install redis-server` or on a Mac: `brew install redis`
  * `supervisor app.js`
 
+#### Starting up
+ * `redis-server &
+ * `supervisor app.js
+
 ### Connecting to Untappd
 
  * Setup `config/secret.js` as follows:
