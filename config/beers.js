@@ -4,7 +4,7 @@
 exports.ids = [
   // Breakside IPA
   15479,
-  // Kiwanda Cream Ale
-  7941
+  // Anthem Pear Cider
+  47454
 ];
 
