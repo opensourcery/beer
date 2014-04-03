@@ -8,8 +8,14 @@
 </head>
 <body>
   <script type="text/javascript">
+    var dataset;
     d3.json("js/sample.json", function(json) {
-        console.log(json);  //Log output to console
+      d3.select("d3-thing")
+        .data(json.foo)
+        .enter()
+        .append("p")
+        .text("baz");
+      //console.log(json);  //Log output to console
     });
   </script>
   <h1><span class="chunky">Beer.</span>OpenSourcery</h1>
@@ -28,6 +34,9 @@
         </ul>
       </div>
     </div>
+  </div>
+  
+  <div id="d3-thing" style="clear:all;">
   </div>
 
   <footer id="footer">
