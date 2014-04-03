@@ -66,8 +66,8 @@
     }
 }
 
-@include make_font_face("SourceSansPro", "Light");
-@include make_font_face("chunkfive", "Regular", "bold");
+@include make_font_face($font-family: "SourceSansPro", $font-variant: "Light", $font-weight: "normal", $font-style: "normal");
+@include make_font_face($font-family: "ChunkFive", $font-variant: "Regular", $font-weight: "bold", $font-style: "normal");
 
 // *** Variables *** //
 
