@@ -56,11 +56,11 @@
     $font-style: "normal") {
     @font-face {
         font-family: '#{$font-family}';
-        src: url('../fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.eot');
-        src: url('../fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.eot?#iefix') format('embedded-opentype'),
-             url('../fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.woff') format('woff'),
-             url('../fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.ttf') format('truetype'),
-             url('../fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.svg##{$font-family}') format('svg');
+        src: url('/fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.eot');
+        src: url('/fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.eot?#iefix') format('embedded-opentype'),
+             url('/fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.woff') format('woff'),
+             url('/fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.ttf') format('truetype'),
+             url('/fonts/#{$font-family}/#{$font-family}-#{$font-variant}-webfont.svg##{$font-family}') format('svg');
         font-weight: #{$font-weight};
         font-style: #{$font-style};
     }
