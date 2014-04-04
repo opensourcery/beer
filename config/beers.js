@@ -5,6 +5,6 @@ exports.ids = [
   // Breakside IPA
   15479,
   // Anthem Pear Cider
-  47454
+  47434
 ];
 
