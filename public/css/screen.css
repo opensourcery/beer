@@ -29,7 +29,7 @@ h1 { font-family: "SourceSansPro", sans-serif; font-size: 72px; }
 h2, h3 { font-family: "ChunkFive", serif; font-size: 36px; }
 @media screen and (max-width: 769px) { h2, h3 { font-size: 24px; } }
 
-.container { margin: 0 4px; position: relative; height: 318px; width: 180px; background-image: url("/img/pint.svg"); background-size: cover; }
+.container { margin: 0 4px; position: relative; height: 318px; width: 180px; border: solid 4px black; -webkit-border-radius: 8px; -moz-border-radius: 8px; -ms-border-radius: 8px; -o-border-radius: 8px; border-radius: 8px; }
 
 .keg { width: 50%; float: left; overflow: hidden; }
 .keg:first-child ul { text-align: right; }
@@ -38,7 +38,7 @@ h2, h3 { font-family: "ChunkFive", serif; font-size: 36px; }
 .keg:last-child .container { float: left; }
 @media screen and (max-width: 769px) { .keg { width: 100%; float: none; margin-bottom: 1em; } }
 
-.filled { position: absolute; bottom: 0; left: 0; background-image: url("/img/beer.svg"); background-repeat: no-repeat; background-size: 180px; background-position: 50% bottom; height: 318px; width: 180px; vertical-align: bottom; }
+.filled { position: absolute; bottom: 0; left: 0; background-color: #e1a223; height: 318px; width: 180px; vertical-align: bottom; }
 
 .amt { margin-top: 0.5em; }
 
