@@ -38,7 +38,7 @@ h2, h3 { font-family: "ChunkFive", serif; font-size: 36px; }
 .keg:last-child .container { float: left; }
 @media screen and (max-width: 769px) { .keg { width: 100%; float: none; margin-bottom: 1em; } }
 
-.filled { position: absolute; bottom: 0; left: 0; background-color: #e1a223; height: 318px; width: 180px; vertical-align: bottom; }
+.filled { position: absolute; bottom: 0; left: 0; background-color: #d4ba25; height: 318px; width: 180px; vertical-align: bottom; }
 
 .amt { margin-top: 0.5em; }
 
@@ -46,6 +46,6 @@ h2, h3 { font-family: "ChunkFive", serif; font-size: 36px; }
 
 #footer { display: block; width: 100%; clear: both; margin: 1em 0; padding-top: 2em; font-size: 18px; text-align: center; color: #505050; }
 
-a:link, a:visited { color: #e1a223; background-color: #f9eed7; text-decoration: none; }
+a:link, a:visited { color: #d4ba25; background-color: #f7f1cf; text-decoration: none; }
 
-a:hover { color: white; background-color: #e1a223; }
+a:hover { color: white; background-color: #d4ba25; }

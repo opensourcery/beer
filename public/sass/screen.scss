@@ -74,8 +74,24 @@
 
 $font-family1: 'SourceSansPro', sans-serif;
 $font-family2: 'ChunkFive', serif;
-$beerbrown: hsl(40,76,51);
 $border-radius: 8px;
+
+// SRM Colors, see https://en.wikipedia.org/wiki/Standard_Reference_Method
+$srm-2:  hsl(60,92,65); // Pale lager, Witbier, Pilsener, Berliner Weisse
+$srm-3:  hsl(60,93,52); // Maibock, Blonde Ale
+$srm-4:  hsl(58,85,51); // Weissbier
+$srm-6:  hsl(51,70,49); // American Pale Ale, India Pale Ale
+$srm-8:  hsl(40,53,49); // Weissbier, Saison
+$srm-10: hsl(32,53,49); // English Bitter, ESB
+$srm-13: hsl(23,57,47); // Biere de Garde, Double IPA
+$srm-17: hsl(17,48,37); // Dark lager, Vienna lager, Marzen, Amber Ale
+$srm-20: hsl(23,56,23); // Brown Ale, Bock, Dunkel, Dunkelweizen
+$srm-24: hsl(4,27,12); // Irish Dry Stout, Doppelbock, Porter
+$srm-29: hsl(12,20,5); // Stout
+$srm-35: hsl(360,7,3); // Foreign Stout, Baltic Porter
+$srm-40: hsl(120,14,1); // Imperial Stout
+
+$beerbrown: $srm-6; // default beer color, why not
 
 body {
 	font: {
