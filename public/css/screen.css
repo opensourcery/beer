@@ -49,3 +49,7 @@ h2, h3 { font-family: "ChunkFive", serif; font-size: 36px; }
 a:link, a:visited { color: #d4ba25; background-color: #f7f1cf; text-decoration: none; }
 
 a:hover { color: white; background-color: #d4ba25; }
+
+[ng-cloak].splash { display: block !important; background-image: url("/img/loading.gif"); background-repeat: no-repeat; background-position: 50% top; width: 34px; height: 50px; margin: 0 auto; text-indent: -5000em; }
+
+.splash { display: none; }
