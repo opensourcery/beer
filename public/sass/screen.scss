@@ -187,3 +187,20 @@ a:hover {
   color: white;
   background-color: $beerbrown;
 }
+
+// Splash styling.
+[ng-cloak].splash {
+  display: block !important;
+  background: {
+    image: url('/img/loading.gif');
+    repeat: no-repeat;
+    position: 50% top;
+  }
+  width: 34px;
+  height: 50px;
+  margin: 0 auto;
+  text-indent: -5000em;
+}
+.splash {
+  display: none;
+}
