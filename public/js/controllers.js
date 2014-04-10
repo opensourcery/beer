@@ -1,14 +1,20 @@
 'use strict';
 
 /* Controllers */
-
 angular.module('osBeer.controllers', []).
   controller('Kegerator', ['$scope', 'socket',
+
     function($scope, socket) {
+      // Initialize with loading incomplete.
+      var loadingComplete = false;
+
       $scope.beers = (typeof $scope.beers === 'undefined') ? [] : $scope.beers;
       socket.on('send:beers', function (data) {
         var tapNumber = data.tapNumber;
-          $scope.beers[tapNumber] = mergeBeer($scope.beers[tapNumber], data.beer);
+        $scope.beers[tapNumber] = mergeBeer($scope.beers[tapNumber], data.beer);
+
+        // Ensure loading screen is hidden and beers are displayed.
+        loadingComplete = true;
       });
 
       // Keg environment.
@@ -21,7 +27,14 @@ angular.module('osBeer.controllers', []).
           // Init beers if undefined.
           $scope.beers[tapNumber] = mergeBeer($scope.beers[tapNumber], { percentRemaining: percent.toPrecision(3) });
         }
+
+        // Ensure loading screen is hidden and beers are displayed.
+        loadingComplete = true;
      });
+
+     $scope.loadingComplete = function () {
+       return loadingComplete;
+     }
     }
   ]);
 

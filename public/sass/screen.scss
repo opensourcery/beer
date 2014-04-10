@@ -212,8 +212,7 @@ a:hover {
 }
 
 // Splash styling.
-[ng-cloak].splash {
-  display: block !important;
+.splash {
   background: {
     image: url('/img/loading.gif');
     repeat: no-repeat;
@@ -224,6 +223,6 @@ a:hover {
   margin: 84px auto 42px;
   text-indent: -5000em;
 }
-.splash {
-  display: none;
+[ng-cloak].splash {
+  display: block !important;
 }
