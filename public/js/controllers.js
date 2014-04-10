@@ -22,10 +22,6 @@ angular.module('osBeer.controllers', []).
           $scope.beers[tapNumber] = mergeBeer($scope.beers[tapNumber], { percentRemaining: percent.toPrecision(3) });
         }
      });
-
-      socket.on('send:time', function (data) {
-        $scope.time = data.time;
-      });
     }
   ]);
 
