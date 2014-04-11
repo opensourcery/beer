@@ -40,7 +40,7 @@ var beerCache = (function() {
         util.debug('Calling untappd API');
         untappd.beerInfo(function(err,data) {
           socket.emit('send:beers', {
-            beer: data.response.beer,
+            beer: slimData(data.response.beer),
             tapNumber: tapNumber
           })
           cache.setex(cacheKey, 3600, JSON.stringify(data.response.beer));
@@ -49,11 +49,23 @@ var beerCache = (function() {
       else {
         util.debug('Found beer in cache');
         socket.emit('send:beers', {
-          beer: JSON.parse(result),
+          beer: slimData(JSON.parse(result)),
           tapNumber: tapNumber
         });
       }
     });
+  }
+
+  /**
+   * Trim out unneeded untappd data to make front end faster.
+   */
+  var slimData = function (data) {
+    delete data.checkins;
+    delete data.friends;
+    delete data.media;
+    delete data.similar;
+    delete data.stats;
+    return data;
   }
 
   return {
