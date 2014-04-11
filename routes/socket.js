@@ -3,6 +3,8 @@
  */
 var UntappdClient = require('node-untappd/UntappdClient');
 
+var util= require('util');
+
 /**
  * Configuration
  */
@@ -35,6 +37,7 @@ var beerCache = (function() {
     cache.get(cacheKey, function (err, result) {
       if (err || !result) {
         // Call untappd.
+        util.debug('Calling untappd API');
         untappd.beerInfo(function(err,data) {
           socket.emit('send:beers', {
             beer: data.response.beer,
@@ -44,6 +47,7 @@ var beerCache = (function() {
         }, beerId);
       }
       else {
+        util.debug('Found beer in cache');
         socket.emit('send:beers', {
           beer: JSON.parse(result),
           tapNumber: tapNumber
