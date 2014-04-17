@@ -2,8 +2,8 @@
  * Untappd beer IDs.
  */
 exports.ids = [
-  // Breakside IPA
-  15479,
+  // Workhorse IPA
+  8784,
   // Anthem Pear Cider
   47454
 ];
