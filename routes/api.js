@@ -17,7 +17,7 @@ exports.environment = function (req, res) {
   // Update the kegerator environment.
   req.app.locals.io.sockets.emit('send:environment', kegerator);
   res.json({response: 'OK'});
-  req.app.locals.log.info('Updating environment from API request by user "' + req.user.username + '".');
+  req.app.locals.io.log.info('Updating environment from API request by user "' + req.user.username + '".');
 
   // Update cache.
   cache.setex('kegerator.environment', 3600 * 24 * 7, JSON.stringify(kegerator));

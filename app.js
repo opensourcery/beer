@@ -25,9 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Allow access to io from within routes.
 app.locals.io = io;
 
-// Use socket's logger.
-app.locals.log = io.log;
-
 // development only
 if (app.get('env') === 'development') {
   app.use(express.errorHandler());
